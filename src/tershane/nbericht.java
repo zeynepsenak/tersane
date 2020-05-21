@@ -1,6 +1,7 @@
 package tershane;
 //Neue Bericht Erstellung Seite
 
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,13 +11,18 @@ import java.util.ArrayList;
 */
 
 public class nbericht extends javax.swing.JFrame {
-
+        public String bericht, fnamen, fsn, pnamen, datn, aunrn, annrn, bewn, opn;
+        public int i;
         datenbank func = new datenbank();
         fdatenbank f = new fdatenbank();
         main m = new main();
+        
+        
     public nbericht() {
         initComponents();
         
+        m.i = m.i + 1;
+        i = m.i;
         
         f.fdb_con();
         func.db_con();
@@ -28,11 +34,15 @@ public class nbericht extends javax.swing.JFrame {
         }
         
         
+        func.db_con();
         
-        String[] info = f.fget_info(m.idn);
-        String oper = info[1] + " " + info[2];
         
-        op.setText(oper);
+        ArrayList<arbeiter> arbe = func.db_list();
+        for(int i = 0; i<arbe.size(); i++){
+            jComboBox7.addItem(arbe.get(i).getName()+ " " + arbe.get(i).getNachname());
+
+        }
+        
        
         
         ArrayList<arbeiter> arb = func.db_list();
@@ -63,11 +73,13 @@ public class nbericht extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
-        op = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
         jComboBox6 = new javax.swing.JComboBox<>();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,21 +107,25 @@ public class nbericht extends javax.swing.JFrame {
         jLabel6.setText("Der Bewerter");
 
         jButton2.setText("Neuen Bericht erstellen");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
             }
         });
-
-        op.setText("Der Operator");
 
         jLabel7.setText("Auftrag Nr ");
 
         jLabel8.setText("Angebot Nr");
 
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+        jComboBox4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox4MouseClicked(evt);
+            }
+        });
+
+        jComboBox6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox6MouseClicked(evt);
             }
         });
 
@@ -121,15 +137,14 @@ public class nbericht extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -151,10 +166,16 @@ public class nbericht extends javax.swing.JFrame {
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(0, 0, Short.MAX_VALUE)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(op, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                                    .addGap(5, 5, 5)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -165,7 +186,7 @@ public class nbericht extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -181,25 +202,30 @@ public class nbericht extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(op))
+                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel6)
+                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -208,25 +234,15 @@ public class nbericht extends javax.swing.JFrame {
         jTextField1.setText(fo.format(date));
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String b = jComboBox1.getSelectedItem().toString();
-        if(b.equals("Bericht 1")){
-            new Bericht1().setVisible(true);
-            this.setVisible(false);
-        }else if(b.equals("Bericht 2")){
-            new Bericht2().setVisible(true);
-            this.setVisible(false);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void jComboBox4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox4MouseClicked
         String[] info = f.fget_info(jComboBox2.getSelectedItem().toString());
+        String l= "";
         for(int k = 0; k<info[2].length(); k++){
-            char x = info[2].charAt(i);
+            char x = info[2].charAt(k);
             String s=Character.toString(x);
             
             if(s.equals("_")){
-                model.addElement(l);
+                jComboBox4.addItem(l);
                 l="";
                 
             }else{
@@ -234,7 +250,82 @@ public class nbericht extends javax.swing.JFrame {
                 
             }
         }
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_jComboBox4MouseClicked
+
+    private void jComboBox6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox6MouseClicked
+        String[] info = f.fget_info(jComboBox2.getSelectedItem().toString());
+        String l= "";
+        for(int k = 0; k<info[3].length(); k++){
+            char x = info[3].charAt(k);
+            String s=Character.toString(x);
+            
+            if(s.equals("_")){
+                jComboBox6.addItem(l);
+                l="";
+                
+            }else{
+                l=l+s;
+                
+            }
+        }
+    }//GEN-LAST:event_jComboBox6MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        fnamen = jComboBox2.getSelectedItem().toString();
+        String[] info = f.fget_info(fnamen);
+        fsn = info[1];
+        pnamen = jComboBox3.getSelectedItem().toString();
+        aunrn = jComboBox4.getSelectedItem().toString();
+        annrn = jComboBox6.getSelectedItem().toString();
+        datn = jTextField1.getText();
+        bewn = jComboBox5.getSelectedItem().toString();
+        
+        bericht = jComboBox1.getSelectedItem().toString();
+        
+        
+        String oper = jComboBox7.getSelectedItem().toString();
+        int c= oper.indexOf(" ");
+        opn = oper.substring(0, c);
+        func.db_con();
+        String[] x = func.get_info(opn);
+        jLabel10.setText(opn);
+        
+        if(bericht.equals("Bericht 1")){
+                new Bericht1().setVisible(true);
+                this.setVisible(false);
+            if(x[2].equals("B1")){
+                new Bericht1().setVisible(true);
+                this.setVisible(false);
+            }else if(x[2].equals("B1-B2")){
+                new Bericht1().setVisible(true);
+                this.setVisible(false);
+            }else if(x[2].equals("Admin")){
+                new Bericht1().setVisible(true);
+                this.setVisible(false);
+            }else{
+                jLabel10.setText("Sie sind nicht autorisiert für diesen bericht");
+            }
+            
+        }else if(bericht.equals("Bericht 2")){
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                this.setVisible(false);
+            if(x[2].equals("B2")){
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                this.setVisible(false);
+            }else if(x[2].equals("B1-B2")){
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                this.setVisible(false);
+            }else if(x[2].equals("Admin")){
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                this.setVisible(false);
+            }else{
+                jLabel10.setText("Sie sind nicht autorisiert für diesen bericht");
+            }
+            
+        }
+        
+        
+    }//GEN-LAST:event_jButton2MouseClicked
 
     
     public static void main(String args[]) {
@@ -255,7 +346,9 @@ public class nbericht extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -263,7 +356,7 @@ public class nbericht extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel op;
     // End of variables declaration//GEN-END:variables
 }

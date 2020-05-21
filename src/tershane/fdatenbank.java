@@ -58,7 +58,7 @@ public class fdatenbank {
             
     }
     
-    static ArrayList<firmen> getArbeiter(){
+    static ArrayList<firmen> getFirma(){
         ArrayList<firmen> firma = new ArrayList <firmen>();
                 
         return firma;
@@ -100,7 +100,7 @@ public class fdatenbank {
     }
     
     public String fdb_upd(int i, String n, String l, String a, String o){
-        query = "update firma set fname=?, fstandort=?, auftragnos= ?, angebotnos where id=?";
+        query = "update firma set fname=?, fstandort=?, auftragnos= ?, angebotnos=? where id=?";
             
             
         try {
@@ -120,7 +120,7 @@ public class fdatenbank {
     }
     
     public String[] fget_info(int i){
-        String[] info = new String[3];
+        String[] info = new String[4];
         try{
             ps = conn.prepareStatement("SELECT * FROM firma WHERE id=?");
             ps.setInt(1, i);
@@ -128,6 +128,26 @@ public class fdatenbank {
             
             if(rs.next()){
                 info[0] = rs.getString(2);
+                info[1] = rs.getString(3);
+                info[2] = rs.getString(4);
+                info[3] = rs.getString(5);    
+            
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(datenbank.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+        return info;
+    }
+    public String[] fget_info(String n){
+        String[] info = new String[4];
+        try{
+            ps = conn.prepareStatement("SELECT * FROM firma WHERE fname=?");
+            ps.setString(1, n);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                info[0] = rs.getString(1);
                 info[1] = rs.getString(3);
                 info[2] = rs.getString(4);
                 info[3] = rs.getString(5);    

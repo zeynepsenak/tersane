@@ -1,6 +1,4 @@
 package tershane;
-
-import java.sql.*;
 //Login Seite
 /*
 @author Zeynep Sena Karabacak
@@ -10,13 +8,13 @@ public class main extends javax.swing.JFrame {
 
     
     datenbank func = new datenbank();
+    public int i=10;
+    
+    
     public main() {
         initComponents();
-        
     }
-
-    
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked") 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -97,13 +95,19 @@ public class main extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         antwort.setText("");
         
-        int idn; String pass;
-        idn = Integer.parseInt(idno.getText());
+        String pass;
+        int idn = Integer.parseInt(idno.getText());
+        
         pass = ps.getText();
         
         func.db_con();
@@ -120,13 +124,7 @@ public class main extends javax.swing.JFrame {
         }else{
             antwort.setText("Probieren Sie wieder bitte! Ein Fehler ist aufgetreten");
         }
-       
-         
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,12 +160,13 @@ public class main extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel antwort;
     private java.awt.TextField idno;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

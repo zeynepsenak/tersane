@@ -163,5 +163,25 @@ public class datenbank {
         return info;
     }
     
+    public String[] get_info(String a){
+        String[] info = new String[3];
+        try{
+            ps = conn.prepareStatement("SELECT * FROM employee WHERE name=?");
+            ps.setString(1, a);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                info[0] = rs.getString(2);
+                info[1] = rs.getString(3);
+                info[2] = rs.getString(5);    
+            
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(datenbank.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+        return info;
+    }
+    
     
 }
