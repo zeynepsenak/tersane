@@ -16,20 +16,18 @@ public class Bericht2 extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Bericht2(String fname, String pname, String fs, String dat, String aunnr, String annr, String bew, String op){
+    public Bericht2(String fname, String pnamen, String fs, String dat, String aunnr, String annr, String bew, String op){
         
         datenbank func = new datenbank();
         
-        nbericht b = new nbericht();
-        standort.setText(fs);
         //kunde.setText(fname);
-        /*pname.setText(b.pname);
-        standort.setText(b.fs);
-        datum.setText(b.dat);
-        datumm.setText(b.dat);
-        String d = b.dat;
+        //pname.setText(pnamen);
+        //standort.setText(fs);
+        //datum.setText(dat);
+        //datumm.setText(dat);
+        //String d = dat;
         
-        try {
+        /*try {
             Date date = new SimpleDateFormat("yyyy/dd/MM").parse(d);
         } catch (ParseException ex) {
             Logger.getLogger(Bericht2.class.getName()).log(Level.SEVERE, null, ex);
@@ -46,11 +44,11 @@ public class Bericht2 extends javax.swing.JFrame {
             }
         }
         
-        bnr.setText(da+b.i);
-        jLabel17.setText(b.aunr);
-        jLabel18.setText(b.annr);
+        bnr.setText(da+b.i);*/
+        //jLabel17.setText(aunnr);
+        //jLabel18.setText(annr);
         
-        DefaultTableModel model = new DefaultTableModel(); 
+        /*DefaultTableModel model = new DefaultTableModel(); 
             model.addColumn("Seriennr"); 
             model.addColumn("Schweißstück Nr");
             model.addColumn("Testlänge"); 
@@ -70,14 +68,14 @@ public class Bericht2 extends javax.swing.JFrame {
             mo.addColumn("Die Bestatigung");
             mo.addColumn("Die Kunde");
             
-            int i= b.bew.indexOf(" ");
-            String iki = b.bew.substring(0, i);
+            int i= bew.indexOf(" ");
+            String iki = bew.substring(0, i);
             func.db_con();
             String[] binfo = func.get_info(iki);
             
             func.db_con();
             
-            String[] opinfo = func.get_info(b.op);
+            String[] opinfo = func.get_info(op);
             
             Object[] row = new Object[4];
             
@@ -90,8 +88,8 @@ public class Bericht2 extends javax.swing.JFrame {
             mo.addRow(row);
             
            jTable2.setModel(model);
-        */
         
+        */
         initComponents();
     }
 
@@ -681,7 +679,7 @@ public class Bericht2 extends javax.swing.JFrame {
                                     .addComponent(jLabel45))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(" Extra", jPanel3);
@@ -711,7 +709,7 @@ public class Bericht2 extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -755,9 +753,9 @@ public class Bericht2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTabbedPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -768,8 +766,8 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
