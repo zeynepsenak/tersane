@@ -16,26 +16,26 @@ public class Bericht2 extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Bericht2(String fname, String pnamen, String fs, String dat, String aunnr, String annr, String bew, String op){
+    public Bericht2(String fname, String pnamen, String fs, String dat, String aunnr, String annr, String bew, String op, int i){
         
         datenbank func = new datenbank();
         
-        //kunde.setText(fname);
-        //pname.setText(pnamen);
-        //standort.setText(fs);
-        //datum.setText(dat);
-        //datumm.setText(dat);
-        //String d = dat;
+        initComponents();
+        kunde.setText(fname);
+        pname.setText(pnamen);
+        standort.setText(fs);
+        datum.setText(dat);
+        datumm.setText(dat);
         
-        /*try {
-            Date date = new SimpleDateFormat("yyyy/dd/MM").parse(d);
+        try {
+            Date date = new SimpleDateFormat("yyyy/dd/MM").parse(dat);
         } catch (ParseException ex) {
             Logger.getLogger(Bericht2.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         String da = "";
-        for(int k = 0; k<d.length(); k++){
-            String x = String.valueOf(d.charAt(k));
+        for(int k = 0; k<dat.length(); k++){
+            String x = String.valueOf(dat.charAt(k));
             if(x.equals("/")){
                 
             }else{
@@ -44,11 +44,11 @@ public class Bericht2 extends javax.swing.JFrame {
             }
         }
         
-        bnr.setText(da+b.i);*/
-        //jLabel17.setText(aunnr);
-        //jLabel18.setText(annr);
+        bnr.setText(da+Integer.toString(i));
+        jLabel17.setText(aunnr);
+        jLabel19.setText(annr);
         
-        /*DefaultTableModel model = new DefaultTableModel(); 
+        DefaultTableModel model = new DefaultTableModel(); 
             model.addColumn("Seriennr"); 
             model.addColumn("Schweißstück Nr");
             model.addColumn("Testlänge"); 
@@ -59,6 +59,31 @@ public class Bericht2 extends javax.swing.JFrame {
             model.addColumn("Fehlerstandort");
             model.addColumn("Ergebnisse");
             
+            Object[] rowa = new Object[9];
+            
+            rowa[0] = " ";
+            rowa[1] = " ";
+            rowa[2] = " ";
+            rowa[3] = " ";
+            rowa[4] = " ";
+            rowa[5] = " ";
+            rowa[6] = " ";
+            rowa[7] = " ";
+            rowa[8] = " ";
+            
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            
            jTable1.setModel(model);
            
             DefaultTableModel mo = new DefaultTableModel(); 
@@ -68,8 +93,8 @@ public class Bericht2 extends javax.swing.JFrame {
             mo.addColumn("Die Bestatigung");
             mo.addColumn("Die Kunde");
             
-            int i= bew.indexOf(" ");
-            String iki = bew.substring(0, i);
+            int j= bew.indexOf(" ");
+            String iki = bew.substring(0, j);
             func.db_con();
             String[] binfo = func.get_info(iki);
             
@@ -77,20 +102,20 @@ public class Bericht2 extends javax.swing.JFrame {
             
             String[] opinfo = func.get_info(op);
             
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
             
             row[0] = "Name Nachname";
-            row[1] = opinfo[2] + " " + opinfo[3];
-            row[2] = binfo[2] + " " + binfo[3];
-            row[3] = "";
-            row[4] = "";
+            row[1] = opinfo[0] + " " + opinfo[1];
+            row[2] = binfo[0] + " " + binfo[1];
+            row[3] = " ";
+            row[4] = " ";
                 
             mo.addRow(row);
             
-           jTable2.setModel(model);
+           jTable2.setModel(mo);
         
-        */
-        initComponents();
+        
+        
     }
 
     
@@ -190,8 +215,10 @@ public class Bericht2 extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 450));
 
         k.setText("Kunde : ");
 
@@ -388,8 +415,6 @@ public class Bericht2 extends javax.swing.JFrame {
         jTextField11.setText("mm");
 
         jLabel24.setText("Untersuchungsbereich :");
-
-        jTextField12.setText("jTextField12");
 
         jLabel25.setText("Strom Art :");
 
@@ -749,15 +774,25 @@ public class Bericht2 extends javax.swing.JFrame {
 
         jLabel1.setText("Inspektionsbericht für magnetische Partikel");
 
+        jButton3.setText("als Excel & PDF speichern");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTabbedPane1)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -767,7 +802,9 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -810,6 +847,54 @@ public class Bericht2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel36MouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        excelwrite e = new excelwrite();
+        String firm = kunde.getText();
+        String proje = pname.getText();
+        String stando = standort.getText();
+        String instndrt = jTextField2.getText();
+        String austndrt = jTextField3.getText();
+        String inver = jTextField6.getText();
+        String inumfang = jTextField4.getText();
+        String znr = jTextField5.getText();
+        String zober = jComboBox1.getSelectedItem().toString();
+        String pstand = jComboBox2.getSelectedItem().toString();
+        String seite = jTextField7.getText();
+        String bnummer = bnr.getText();
+        String bdatum = datum.getText();
+        String aunr = jLabel17.getText();
+        String annr = jLabel19.getText();  
+        String polabst = jTextField1.getText();
+        String gerat = jTextField8.getText();
+        String Mp = jTextArea1.getText();
+        String MagTech = jTextField9.getText();
+        String Uv = jTextField10.getText();
+        String entlicht = jTextField11.getText();
+        String untber = jTextField12.getText();
+        String strom = jComboBox3.getSelectedItem().toString();
+        String lmet = jTextField13.getText();
+        String tmed = jTextField14.getText();
+        String entmeg = jTextField15.getText();
+        String wbehandlung = jTextField16.getText();
+        String obertemp = jTextField17.getText();
+        String gauss = jTextField18.getText();
+        String zoberfl = jTextField19.getText();
+        String idlicht = jTextField20.getText();
+        String beltestdatnr = jTextField21.getText();
+        String sscw = jButton1.getText();
+        String fscw = jButton2.getText();
+        String sabw = jTextField22.getText();
+        String inter = datumm.getText();
+        String anhange = jTextField23.getText();
+        //2tablo var daha
+        
+        try {
+            e.write(firm, proje, stando, instndrt, austndrt, inver, inumfang, znr, zober, pstand, seite, bnummer, bdatum, aunr, annr, polabst, gerat, Mp, MagTech, Uv, entlicht, untber, strom, lmet, tmed, entmeg, wbehandlung, obertemp, gauss, zoberfl, idlicht, beltestdatnr, sscw, fscw, sabw, inter, anhange);
+        } catch (Exception ex) {
+            Logger.getLogger(Bericht2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     
     public static void main(String args[]) {
        
@@ -826,6 +911,7 @@ public class Bericht2 extends javax.swing.JFrame {
     private javax.swing.JLabel datumm;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

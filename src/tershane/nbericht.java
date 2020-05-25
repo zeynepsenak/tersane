@@ -19,7 +19,12 @@ public class nbericht extends javax.swing.JFrame {
         
         
     public nbericht() {
+        initComponents();    
+    }
+    public nbericht(String id){
         initComponents();
+        
+        jLabel10.setText("Sie müssen alle Felder füllen!");
         
         m.i = m.i + 1;
         i = m.i;
@@ -36,12 +41,12 @@ public class nbericht extends javax.swing.JFrame {
         
         func.db_con();
         
-        
-        ArrayList<arbeiter> arbe = func.db_list();
+        jTextField2.setText(id);
+        /*ArrayList<arbeiter> arbe = func.db_list();
         for(int i = 0; i<arbe.size(); i++){
             jComboBox7.addItem(arbe.get(i).getName()+ " " + arbe.get(i).getNachname());
 
-        }
+        }*/
         
        
         
@@ -51,9 +56,6 @@ public class nbericht extends javax.swing.JFrame {
                 jComboBox5.addItem(arb.get(i).getName()+ " " + arb.get(i).getNachname());
             }
         }
-        
-        
-           
     }
 
     @SuppressWarnings("unchecked")
@@ -77,9 +79,9 @@ public class nbericht extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
         jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,10 +144,6 @@ public class nbericht extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -175,6 +173,10 @@ public class nbericht extends javax.swing.JFrame {
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -210,7 +212,7 @@ public class nbericht extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -283,12 +285,11 @@ public class nbericht extends javax.swing.JFrame {
         bericht = jComboBox1.getSelectedItem().toString();
         
         
-        String oper = jComboBox7.getSelectedItem().toString();
-        int c= oper.indexOf(" ");
-        opn = oper.substring(0, c);
+        //String oper = jComboBox7.getSelectedItem().toString();
+        String oper = jTextField2.getText();
+        int c = Integer.parseInt(oper);
         func.db_con();
-        String[] x = func.get_info(opn);
-        jLabel10.setText(opn);
+        String[] x = func.get_info(c);
         
         if(bericht.equals("Bericht 1")){
                 new Bericht1().setVisible(true);
@@ -307,16 +308,16 @@ public class nbericht extends javax.swing.JFrame {
             }
             
         }else if(bericht.equals("Bericht 2")){
-                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i).setVisible(true);
                 this.setVisible(false);
             if(x[2].equals("B2")){
-                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i).setVisible(true);
                 this.setVisible(false);
             }else if(x[2].equals("B1-B2")){
-                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i).setVisible(true);
                 this.setVisible(false);
             }else if(x[2].equals("Admin")){
-                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn).setVisible(true);
+                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i).setVisible(true);
                 this.setVisible(false);
             }else{
                 jLabel10.setText("Sie sind nicht autorisiert für diesen bericht");
@@ -346,7 +347,6 @@ public class nbericht extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -358,5 +358,6 @@ public class nbericht extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

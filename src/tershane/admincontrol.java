@@ -12,12 +12,17 @@ public class admincontrol extends javax.swing.JFrame {
     
     public static int s;
     datenbank func = new datenbank();
-   
+    public static String id;
     
     public admincontrol() {
         initComponents();
         
-            func.db_con();
+    }
+
+    public admincontrol(String k){
+        id = k;
+        initComponents();
+        func.db_con();
  
             DefaultTableModel model = new DefaultTableModel(); 
             model.addColumn("ID"); 
@@ -38,10 +43,7 @@ public class admincontrol extends javax.swing.JFrame {
             }
            
             jTable1.setModel(model);
-            
-        
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -185,7 +187,7 @@ public class admincontrol extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new nbericht().setVisible(true);
+        new nbericht(id).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 

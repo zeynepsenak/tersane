@@ -106,7 +106,8 @@ public class main extends javax.swing.JFrame {
         antwort.setText("");
         
         String pass;
-        int idn = Integer.parseInt(idno.getText());
+        String idd = idno.getText();
+        int idn = Integer.parseInt(idd);
         
         pass = ps.getText();
         
@@ -114,7 +115,7 @@ public class main extends javax.swing.JFrame {
         String log_ant = func.login(idn, pass);
             
         if(log_ant.equals("Admin")){
-            new admincontrol().setVisible(true);
+            new admincontrol(idd).setVisible(true);
             this.setVisible(false);
         }else if(log_ant.equals("Mitarbeiter")){
             new mitarbeiter().setVisible(true);
