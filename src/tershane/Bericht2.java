@@ -2,7 +2,6 @@ package tershane;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +15,7 @@ public class Bericht2 extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Bericht2(String fname, String pnamen, String fs, String dat, String aunnr, String annr, String bew, String op, int i){
+    public Bericht2(String fname, String pnamen, String fs, String dat, String aunnr, String annr, String bew, String op, int i, String ben){
         
         datenbank func = new datenbank();
         
@@ -49,15 +48,16 @@ public class Bericht2 extends javax.swing.JFrame {
         jLabel19.setText(annr);
         
         DefaultTableModel model = new DefaultTableModel(); 
-            model.addColumn("Seriennr"); 
-            model.addColumn("Schweißstück Nr");
-            model.addColumn("Testlänge"); 
-            model.addColumn("Schweißprozess");
-            model.addColumn("Dicke"); 
-            model.addColumn("Durchmesser");
-            model.addColumn("Fehlertyp"); 
-            model.addColumn("Fehlerstandort");
-            model.addColumn("Ergebnisse");
+            model.addColumn("Sıra No"); 
+            model.addColumn("Kaynak/Parça No");
+            model.addColumn("Kontrol Uzun."); 
+            model.addColumn("Kaynak Yön.");
+            model.addColumn("Kalınlık(mm)"); 
+            model.addColumn("Çap(mm)");
+            model.addColumn("Hata Tipi"); 
+            model.addColumn("Hata Yeri");
+            model.addColumn("OK");
+            model.addColumn("RED");
             
             Object[] rowa = new Object[9];
             
@@ -83,15 +83,18 @@ public class Bericht2 extends javax.swing.JFrame {
             model.addRow(rowa);
             model.addRow(rowa);
             model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
+            model.addRow(rowa);
             
            jTable1.setModel(model);
            
             DefaultTableModel mo = new DefaultTableModel(); 
-            mo.addColumn("Der Person"); 
-            mo.addColumn("Der Operator");
-            mo.addColumn("Der Bewerber"); 
-            mo.addColumn("Die Bestatigung");
-            mo.addColumn("Die Kunde");
+            mo.addColumn("Personel"); 
+            mo.addColumn("Operatör");
+            mo.addColumn("Değerlendiren"); 
+            mo.addColumn("Onay");
+            mo.addColumn("Müşteri");
             
             int j= bew.indexOf(" ");
             String iki = bew.substring(0, j);
@@ -99,14 +102,42 @@ public class Bericht2 extends javax.swing.JFrame {
             String[] binfo = func.get_info(iki);
             
             func.db_con();
-            
             String[] opinfo = func.get_info(op);
+            
+            func.db_con();
+            int jb= ben.indexOf(" ");
+            String ikim = ben.substring(0, j);
+            String[] besinfo = func.get_info(ikim);
             
             Object[] row = new Object[5];
             
-            row[0] = "Name Nachname";
+            row[0] = "Adı Soyadı";
             row[1] = opinfo[0] + " " + opinfo[1];
             row[2] = binfo[0] + " " + binfo[1];
+            row[3] = besinfo[0] + " " + besinfo[1];
+            row[4] = " ";
+                
+            mo.addRow(row);
+            
+            row[0] = "Seviye";
+            row[1] = opinfo[2];
+            row[2] = binfo[2];
+            row[3] = besinfo[2];
+            row[4] = " ";
+                
+            mo.addRow(row);
+            
+            row[0] = "Tarih";
+            row[1] = dat;
+            row[2] = dat;
+            row[3] = dat;
+            row[4] = " ";
+                
+            mo.addRow(row);
+            
+            row[0] = "İmza";
+            row[1] = " ";
+            row[2] = " ";
             row[3] = " ";
             row[4] = " ";
                 
@@ -886,10 +917,21 @@ public class Bericht2 extends javax.swing.JFrame {
         String sabw = jTextField22.getText();
         String inter = datumm.getText();
         String anhange = jTextField23.getText();
-        //2tablo var daha
-        
+        //tablolar
+        String[][] data = new String[15][11];
+        for (int row = 0; row < 15; row++){
+            for (int column = 0; column < 10 ; column++){  
+                data[row][column] = String.valueOf(jTable1.getValueAt(row,column));   
+            }
+        }
+        String[][] data2 = new String[5][5];
+        for (int row = 0; row < 4; row++){
+            for (int column = 0; column < 4 ; column++){  
+                data2[row][column] = String.valueOf(jTable2.getValueAt(row,column));   
+            }
+        }
         try {
-            e.write(firm, proje, stando, instndrt, austndrt, inver, inumfang, znr, zober, pstand, seite, bnummer, bdatum, aunr, annr, polabst, gerat, Mp, MagTech, Uv, entlicht, untber, strom, lmet, tmed, entmeg, wbehandlung, obertemp, gauss, zoberfl, idlicht, beltestdatnr, sscw, fscw, sabw, inter, anhange);
+            e.write(data, data2, firm, proje, stando, instndrt, austndrt, inver, inumfang, znr, zober, pstand, seite, bnummer, bdatum, aunr, annr, polabst, gerat, Mp, MagTech, Uv, entlicht, untber, strom, lmet, tmed, entmeg, wbehandlung, obertemp, gauss, zoberfl, idlicht, beltestdatnr, sscw, fscw, sabw, inter, anhange);
         } catch (Exception ex) {
             Logger.getLogger(Bericht2.class.getName()).log(Level.SEVERE, null, ex);
         }

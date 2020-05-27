@@ -14,10 +14,11 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.util.IOUtils;
+import org.apache.poi.util.Units;
 
 public class excelwrite {
-    
-    public void write(String firm, String proje, String stando, String instndrt, String austndrt, String inver, String inumfang, String znr, String zober, String pstand, String seite, String bnummer, String bdatum, String aunr, String annr, String polabst, String gerat, String Mp, String MagTech, String Uv, String entlicht, String untber, String strom, String lmet, String tmed, String entmeg, String wbehandlung, String obertemp, String gauss, String zoberfl, String idlicht, String beltestdatnr, String sscw, String fscw, String sabw, String inter, String anhange) throws Exception{
+    //String[][] data,
+    public void write(String[][] data, String[][] data2, String firm, String proje, String stando, String instndrt, String austndrt, String inver, String inumfang, String znr, String zober, String pstand, String seite, String bnummer, String bdatum, String aunr, String annr, String polabst, String gerat, String Mp, String MagTech, String Uv, String entlicht, String untber, String strom, String lmet, String tmed, String entmeg, String wbehandlung, String obertemp, String gauss, String zoberfl, String idlicht, String beltestdatnr, String sscw, String fscw, String sabw, String inter, String anhange) throws Exception{
         String fna =  "C:\\Users\\zsena\\Desktop\\" + firm + "_" + proje + ".xls";
         Workbook workbook = new HSSFWorkbook();
         Sheet sheet = workbook.createSheet("Inspektionsbericht für magnetische Partikel");
@@ -66,8 +67,18 @@ public class excelwrite {
         
         
         int pictureIdx;
+        String x = "";
+        if(sscw.equals("+") && fscw.equals("+")){
+            x = "C:/dolu.jpeg";
+        }else if(sscw.equals("+") && fscw.equals("-")){
+            x = "C:/bir.jpeg" ;
+        }else if(sscw.equals("-") && fscw.equals("+")){
+            x = "C:/iki.jpeg";
+        }else if(sscw.equals("-") && fscw.equals("-")){
+            x = "C:/bos.jpeg";
+        }
         try ( //resimler
-            InputStream inputStream = new FileInputStream("C:/2.1.jpeg")) {
+            InputStream inputStream = new FileInputStream(x)) {
             byte[] bytes = IOUtils.toByteArray(inputStream);
             pictureIdx = workbook.addPicture(bytes, Workbook.PICTURE_TYPE_JPEG);
             inputStream.close();
@@ -77,30 +88,14 @@ public class excelwrite {
             ClientAnchor anchor = helper.createClientAnchor();
             anchor.setCol1(0); 
             anchor.setRow1(14); 
-            anchor.setCol2(6); 
+            anchor.setCol2(15); 
             anchor.setRow2(19);
 
             Picture pict = drawing.createPicture(anchor, pictureIdx);
            // pict.resize();
         }
-        try(
-            InputStream inputStream = new FileInputStream("C:/2.2.jpeg")) {
-            byte[] bytes = IOUtils.toByteArray(inputStream);
-            pictureIdx = workbook.addPicture(bytes, Workbook.PICTURE_TYPE_JPEG);
-            inputStream.close();
         
-            CreationHelper helper = workbook.getCreationHelper();
-            Drawing drawing = sheet.createDrawingPatriarch();
-            ClientAnchor anchor = helper.createClientAnchor();
-            anchor.setCol1(6); 
-            anchor.setRow1(14);
-            anchor.setCol2(15);
-            anchor.setRow2(20);
-
-            Picture pic = drawing.createPicture(anchor, pictureIdx);
-           // pic.resize();
-        
-        }
+       
         
         sheet.addMergedRegion(new CellRangeAddress(14,14,16,27));
         row = sheet.createRow(14);
@@ -120,7 +115,6 @@ public class excelwrite {
         cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(19,19,7,27));
-        row = sheet.createRow(19);
         cell = row.createCell(7);
         cell.setCellValue(sabw);
         
@@ -131,7 +125,6 @@ public class excelwrite {
         cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(20,20,7,27));
-        row = sheet.createRow(20);
         cell = row.createCell(7);
         cell.setCellValue(inter);
         
@@ -142,7 +135,6 @@ public class excelwrite {
         cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(21,21,7,27));
-        row = sheet.createRow(21);
         cell = row.createCell(7);
         cell.setCellValue(anhange);
         
@@ -152,38 +144,228 @@ public class excelwrite {
         cell.setCellValue("Inspektionsergebnisse");
         cell.setCellStyle(headerCellStyle);
         
+        row = sheet.createRow(23);
+        cell = row.createCell(0);
+        cell.setCellValue("Sıra No");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(23,23,1,7));
+        cell = row.createCell(1);
+        cell.setCellValue("Kaynak/Parça No");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(23,23,8,10));
+        cell = row.createCell(8);
+        cell.setCellValue("Kontrol Uzun.");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(23,23,11,16));
+        cell = row.createCell(11);
+        cell.setCellValue("Kaynal Yön.");
+        cell.setCellStyle(headerCellStyle);
+        
+        cell = row.createCell(17);
+        cell.setCellValue("Kalınlık(mm)");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(23,23,18,21));
+        cell = row.createCell(18);
+        cell.setCellValue("Çap(mm)");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(23,23,22,23));
+        cell = row.createCell(22);
+        cell.setCellValue("Hata Tipi");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(23,23,24,26));
+        cell = row.createCell(24);
+        cell.setCellValue("Hatanın Yeri");
+        cell.setCellStyle(headerCellStyle);
+        
+        cell = row.createCell(27);
+        cell.setCellValue("Sonuç");
+        cell.setCellStyle(headerCellStyle);
+        
+        int count=24;
+        for(int r=0; r<15; r++ ){
+            row = sheet.createRow(count);
+            
+            cell = row.createCell(0);
+            cell.setCellValue(data[r][0]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,1,7));
+            cell = row.createCell(1);
+            cell.setCellValue(data[r][1]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,8,10));
+            cell = row.createCell(8);
+            cell.setCellValue(data[r][2]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,11,16));
+            cell = row.createCell(11);
+            cell.setCellValue(data[r][3]);
+
+            cell = row.createCell(17);
+            cell.setCellValue(data[r][4]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,18,21));
+            cell = row.createCell(18);
+            cell.setCellValue(data[r][5]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,22,23));
+            cell = row.createCell(22);
+            cell.setCellValue(data[r][6]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,24,26));
+            cell = row.createCell(24);
+            cell.setCellValue(data[r][7]);
+
+            cell = row.createCell(27);
+            cell.setCellValue(data[r][8]);
+            
+            count = count + 1;
+        }
+        
+        row = sheet.createRow(39);
+        
+        sheet.addMergedRegion(new CellRangeAddress(39,39,0,4));
+        cell = row.createCell(0);
+        cell.setCellValue("Personel Bilgileri");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(39,39,5,14));
+        cell = row.createCell(5);
+        cell.setCellValue("Operatör");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(39,39,15,19));
+        cell = row.createCell(15);
+        cell.setCellValue("Değerlendiren");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(39,39,20,24));
+        cell = row.createCell(20);
+        cell.setCellValue("Onay");
+        cell.setCellStyle(headerCellStyle);
+        
+        sheet.addMergedRegion(new CellRangeAddress(39,39,25,26));
+        cell = row.createCell(25);
+        cell.setCellValue("Müşteri");
+        cell.setCellStyle(headerCellStyle);
+        
+        count = 40;
+        for(int y=0; y<4; y++){
+            row = sheet.createRow(count);
+        
+            sheet.addMergedRegion(new CellRangeAddress(count,count,0,4));
+            cell = row.createCell(0);
+            cell.setCellValue(data2[y][0]);
+            cell.setCellStyle(headerCellStyle);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,5,14));
+            cell = row.createCell(5);
+            cell.setCellValue(data2[y][1]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,15,19));
+            cell = row.createCell(15);
+            cell.setCellValue(data2[y][2]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,20,24));
+            cell = row.createCell(20);
+            cell.setCellValue(data2[y][3]);
+
+            sheet.addMergedRegion(new CellRangeAddress(count,count,25,26));
+            cell = row.createCell(25);
+            cell.setCellValue(data2[y][4]);
+            
+            count = count + 1;
+        }
         
         
         
-        sheet.autoSizeColumn(0);
-        sheet.autoSizeColumn(1);
-        sheet.autoSizeColumn(2);
-        sheet.autoSizeColumn(3);
-        sheet.autoSizeColumn(4);
-        sheet.autoSizeColumn(5);
-        sheet.autoSizeColumn(6);
-        sheet.autoSizeColumn(7);
-        sheet.autoSizeColumn(8);
-        sheet.autoSizeColumn(9);
-        sheet.autoSizeColumn(10);
-        sheet.autoSizeColumn(11);
-        sheet.autoSizeColumn(12);
-        sheet.autoSizeColumn(13);
-        sheet.autoSizeColumn(14);
-        sheet.autoSizeColumn(15);
-        sheet.autoSizeColumn(16);
-        sheet.autoSizeColumn(17);
-        sheet.autoSizeColumn(18);
-        sheet.autoSizeColumn(19);
-        sheet.autoSizeColumn(20);
-        sheet.autoSizeColumn(21);
-        sheet.autoSizeColumn(22);
-        sheet.autoSizeColumn(23);
-        sheet.autoSizeColumn(24);
-        sheet.autoSizeColumn(25);
-        sheet.autoSizeColumn(26);
-        sheet.autoSizeColumn(27);
-        sheet.autoSizeColumn(28);
+        
+        
+        float widthExcel = 5.11f;
+        int width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(0, width256);
+        widthExcel = 3.11f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(1, width256);
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(2, width256);
+        widthExcel = 0.80f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(3, width256);
+        widthExcel = 1.50f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(4, width256);
+        widthExcel = 0.70f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(5, width256);
+        widthExcel = 2.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(6, width256);
+        widthExcel = 1.20f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(7, width256);
+        widthExcel = 3.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(8, width256);
+        widthExcel = 1.20f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(9, width256);
+        widthExcel = 3.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(10, width256);
+        widthExcel = 2.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(11, width256);
+        widthExcel = 0.11f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(12, width256);
+        widthExcel = 0.11f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(13, width256);
+        widthExcel = 0.11f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(14, width256);
+        widthExcel = 5.90f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(15, width256);
+        widthExcel = 1.20f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(16, width256);
+        widthExcel = 6.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(17, width256);
+        widthExcel = 2.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(18, width256);
+        widthExcel = 1.90f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(19, width256);
+        widthExcel = 1.50f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(20, width256);
+        widthExcel = 0.11f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(21, width256);
+        widthExcel = 6.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(22, width256);
+        widthExcel = 1.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(23, width256);
+        widthExcel = 3.30f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(24, width256);
+        widthExcel = 3.00f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(25, width256);
+        widthExcel = 4.20f;
+        width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
+        sheet.setColumnWidth(26, width256);
         
         
         try(FileOutputStream outputStream = new FileOutputStream(fna)) {
@@ -192,7 +374,11 @@ public class excelwrite {
         } catch (FileNotFoundException ex) {
             System.out.println(ex);
         }
+        
+        
     }
+        
+    
     
     private void createInfoRows(Workbook workbook, Sheet sheet, String l1, String l2, String l3, String a1, String a2, String a3, int r, int c1, int c2, int c21, int c22, int c31, int c32,int c41, int c42,int c51, int c52, int c61, int c62){
         CellStyle style = workbook.createCellStyle();
@@ -228,6 +414,8 @@ public class excelwrite {
         sheet.addMergedRegion(new CellRangeAddress(r,r,c61,c62));
         Cell pCel3 = row.createCell(c61);
         pCel3.setCellValue(a3);
+        
+       
     }
     
     private void createDiscRows(Workbook workbook, Sheet sheet, int r, String a, String b, int c1, int c2, int c21, int c22){
@@ -248,6 +436,8 @@ public class excelwrite {
         cell.setCellValue(b);
         cell.setCellStyle(style);
     }
+    
+    
    
     
 }
