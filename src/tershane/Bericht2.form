@@ -62,8 +62,8 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Project Informationen">
-                <Property name="tabTitle" type="java.lang.String" value="Project Informationen"/>
+              <JTabbedPaneConstraints tabName="Proje Bilgileri">
+                <Property name="tabTitle" type="java.lang.String" value="Proje Bilgileri"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -73,33 +73,26 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel2" max="32767" attributes="0"/>
+                          <Component id="p" alignment="0" max="32767" attributes="0"/>
+                          <Component id="k" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel7" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel2" max="32767" attributes="0"/>
-                                  <Component id="p" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="k" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="kunde" max="32767" attributes="0"/>
-                                  <Component id="pname" max="32767" attributes="0"/>
-                                  <Component id="standort" max="32767" attributes="0"/>
-                                  <Component id="jTextField2" max="32767" attributes="0"/>
-                                  <Component id="jTextField3" max="32767" attributes="0"/>
-                                  <Component id="jTextField4" max="32767" attributes="0"/>
-                                  <Component id="jTextField5" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel7" min="-2" pref="133" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jTextField6" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jTextField6" max="32767" attributes="0"/>
+                          <Component id="kunde" max="32767" attributes="0"/>
+                          <Component id="pname" max="32767" attributes="0"/>
+                          <Component id="standort" max="32767" attributes="0"/>
+                          <Component id="jTextField2" max="32767" attributes="0"/>
+                          <Component id="jTextField3" max="32767" attributes="0"/>
+                          <Component id="jTextField4" max="32767" attributes="0"/>
+                          <Component id="jTextField5" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -129,7 +122,7 @@
                               <Component id="jLabel17" alignment="0" pref="150" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -203,37 +196,37 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="k">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Kunde : "/>
+                <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="p">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Projectname :"/>
+                <Property name="text" type="java.lang.String" value="Proje Ad&#x131;: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Inspektionsstandort : "/>
+                <Property name="text" type="java.lang.String" value="Test Yeri :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Inspektionsstandard :"/>
+                <Property name="text" type="java.lang.String" value="Muayne Standard&#x131; / S&#x131;n&#x131;f&#x131; :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Auswertungsstandard :"/>
+                <Property name="text" type="java.lang.String" value="De&#x11f;erlendirme Standard&#x131; :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Inspektionsumfang :"/>
+                <Property name="text" type="java.lang.String" value="Muayne Kapsam&#x131; :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Zeichnung Nr :"/>
+                <Property name="text" type="java.lang.String" value="Resim No :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="kunde">
@@ -270,7 +263,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Inspektionsverfahren :"/>
+                <Property name="text" type="java.lang.String" value="Muayne Prosed&#xfc;r&#xfc; :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField6">
@@ -280,22 +273,22 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Zustand der Oberfl&#xe4;che :"/>
+                <Property name="text" type="java.lang.String" value="Y&#xfc;zey Durumu :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pr&#xfc;fungsstand :"/>
+                <Property name="text" type="java.lang.String" value="Muayne A&#x15f;amas&#x131; :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="nach dem Schweissen"/>
-                    <StringItem index="1" value="vor dem Schweissen"/>
-                    <StringItem index="2" value="unbehandelt"/>
-                    <StringItem index="3" value="behandelt"/>
+                    <StringItem index="0" value="Kaynak Sonras&#x131;"/>
+                    <StringItem index="1" value="Kaynak &#xd6;ncesi"/>
+                    <StringItem index="2" value="&#x130;&#x15f;lenmemi&#x15f;"/>
+                    <StringItem index="3" value="&#x130;&#x15f;lem g&#xf6;rm&#xfc;&#x15f;"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -307,8 +300,8 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
-                    <StringItem index="0" value="unbehandelt"/>
-                    <StringItem index="1" value="behandelt"/>
+                    <StringItem index="0" value="&#x130;&#x15f;lenmemi&#x15f;"/>
+                    <StringItem index="1" value="&#x130;&#x15f;lem g&#xf6;rm&#xfc;&#x15f;"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -318,7 +311,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Seite :"/>
+                <Property name="text" type="java.lang.String" value="Sayfa :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField7">
@@ -328,19 +321,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Bericht Nr :"/>
+                <Property name="text" type="java.lang.String" value="Rapor No :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Bericht Datum : "/>
+                <Property name="text" type="java.lang.String" value="Rapor Tarihi :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Auftragsnr :"/>
+                <Property name="text" type="java.lang.String" value="&#x130;&#x15f; Emri No :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="bnr">
@@ -360,7 +353,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Angebot Nr :"/>
+                <Property name="text" type="java.lang.String" value="Teklif No :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
@@ -373,8 +366,8 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Ger&#xe4;tinformationen">
-                <Property name="tabTitle" type="java.lang.String" value="Ger&#xe4;tinformationen"/>
+              <JTabbedPaneConstraints tabName="Cihaz Bilgileri">
+                <Property name="tabTitle" type="java.lang.String" value="Cihaz Bilgileri"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -408,35 +401,36 @@
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabel27" max="32767" attributes="0"/>
-                                  <Component id="jLabel28" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel29" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel30" alignment="0" pref="188" max="32767" attributes="0"/>
-                                  <Component id="jLabel31" max="32767" attributes="0"/>
-                                  <Component id="jLabel26" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jTextField20" min="-2" pref="117" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel34" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jLabel27" max="32767" attributes="0"/>
+                                          <Component id="jLabel28" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel29" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel30" alignment="0" pref="188" max="32767" attributes="0"/>
+                                          <Component id="jLabel31" max="32767" attributes="0"/>
+                                          <Component id="jLabel26" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel33" max="32767" attributes="0"/>
+                                  <Component id="jLabel32" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField19" max="32767" attributes="0"/>
                                   <Component id="jTextField14" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jTextField15" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jTextField16" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jTextField17" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jTextField18" max="32767" attributes="0"/>
+                                  <Component id="jTextField18" pref="117" max="32767" attributes="0"/>
                                   <Component id="jTextField13" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabel34" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel33" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel32" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField19" pref="97" max="32767" attributes="0"/>
-                                  <Component id="jTextField20" max="32767" attributes="0"/>
-                                  <Component id="jTextField21" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField21" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -549,27 +543,27 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Polabstand :"/>
+                <Property name="text" type="java.lang.String" value="Kutup Mesafesi :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ger&#xe4;t :"/>
+                <Property name="text" type="java.lang.String" value="Cihaz :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
-                <Property name="text" type="java.lang.String" value="MP Tr&#xe4;germedium :"/>
+                <Property name="text" type="java.lang.String" value="MP Ta&#x15f;&#x131;y&#x131;c&#x131; Ortam :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Magnetisierungstechnik :"/>
+                <Property name="text" type="java.lang.String" value="M&#x131;knat&#x131;slama Tekni&#x11f;i :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Entfernung des Lichts :"/>
+                <Property name="text" type="java.lang.String" value="I&#x15f;&#x131;k Mesafesi :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField1">
@@ -607,7 +601,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
-                <Property name="text" type="java.lang.String" value="UV-Lichtintensit&#xe4;t :"/>
+                <Property name="text" type="java.lang.String" value="UV-I&#x15f;&#x131;k &#x15e;iddeti :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField11">
@@ -617,14 +611,14 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Untersuchungsbereich :"/>
+                <Property name="text" type="java.lang.String" value="Muayne B&#xf6;lgesi :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField12">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Strom Art :"/>
+                <Property name="text" type="java.lang.String" value="Ak&#x131;m Tipi :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox3">
@@ -652,17 +646,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel27">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Testmedium :"/>
+                <Property name="text" type="java.lang.String" value="Muayne Ortam&#x131; :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Entmagnetiierung :"/>
+                <Property name="text" type="java.lang.String" value="M&#x131;knat&#x131;s Giderimi :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel29">
               <Properties>
-                <Property name="text" type="java.lang.String" value="W&#xe4;rmebehandlung :"/>
+                <Property name="text" type="java.lang.String" value="Is&#x131;l &#x130;&#x15f;lemi :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField14">
@@ -673,7 +667,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel30">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Oberfl&#xe4;chentemperature:"/>
+                <Property name="text" type="java.lang.String" value="Y&#xfc;zey S&#x131;cakl&#x131;&#x11f;&#x131; :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField17">
@@ -683,7 +677,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Gauss-Feldst&#xe4;rke :"/>
+                <Property name="text" type="java.lang.String" value="Muayne B&#xf6;lgesindeki Alan &#x15e;id. :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField18">
@@ -693,7 +687,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel32">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Zustand der Oberfl&#xe4;che :"/>
+                <Property name="text" type="java.lang.String" value="Y&#xfc;zey :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField19">
@@ -703,7 +697,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Identifizierung von Lichtger&#xe4;ten :"/>
+                <Property name="text" type="java.lang.String" value="I&#x15f;&#x131;k Cihaz&#x131; Tan&#x131;ma :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField20">
@@ -713,7 +707,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Beleuctungstest Datum/Nummer :"/>
+                <Property name="text" type="java.lang.String" value="Kald&#x131;rma Testi Tarih / No :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField21">
@@ -723,8 +717,8 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName=" Extra">
-                <Property name="tabTitle" type="java.lang.String" value=" Extra"/>
+              <JTabbedPaneConstraints tabName="Ekstra">
+                <Property name="tabTitle" type="java.lang.String" value="Ekstra"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -743,7 +737,7 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel37" max="32767" attributes="0"/>
-                          <Component id="jLabel38" max="32767" attributes="0"/>
+                          <Component id="jLabel38" pref="414" max="32767" attributes="0"/>
                           <Component id="jLabel39" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -753,9 +747,9 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField22" pref="172" max="32767" attributes="0"/>
-                                  <Component id="jTextField23" max="32767" attributes="0"/>
+                                  <Component id="jTextField22" pref="222" max="32767" attributes="0"/>
                                   <Component id="datumm" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField23" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jLabel41" alignment="0" max="32767" attributes="0"/>
@@ -827,7 +821,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/tershane/2.1.jpeg"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Stumpfscweissung"/>
+                <Property name="text" type="java.lang.String" value="K&#xf6;&#x15f;e Kayna&#x11f;&#x131;"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel35MouseClicked"/>
@@ -838,7 +832,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/tershane/2.2.jpeg"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Filletschweissung"/>
+                <Property name="text" type="java.lang.String" value="Al&#x131;n Kyana&#x11f;&#x131;"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel36MouseClicked"/>
@@ -867,37 +861,37 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel38">
               <Properties>
-                <Property name="text" type="java.lang.String" value="BM                                                              UNEDLES METALL"/>
+                <Property name="text" type="java.lang.String" value="BM                                                                      ANA METAL"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel39">
               <Properties>
-                <Property name="text" type="java.lang.String" value="HAZ                                               W&#xc4;RMEBETROFFENE ZONE"/>
+                <Property name="text" type="java.lang.String" value="HAZ                                                ISIDAN ETK&#x130;LENEN B&#xd6;LGE"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel40">
               <Properties>
-                <Property name="text" type="java.lang.String" value="W                                                                     SCHWEI&#xdf;UNG"/>
+                <Property name="text" type="java.lang.String" value="W                                                                            KAYNAK"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel41">
               <Properties>
-                <Property name="text" type="java.lang.String" value="B                                                                                   FASE"/>
+                <Property name="text" type="java.lang.String" value="B                                                                      KAYNAK A&#x11e;ZI"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel42">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Standardabweichungen :"/>
+                <Property name="text" type="java.lang.String" value="Standart Sapmalar :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel43">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Inspektionstermine :"/>
+                <Property name="text" type="java.lang.String" value="Muayne Tarihleri :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField22">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Es gibt nicht!"/>
+                <Property name="text" type="java.lang.String" value="Satandart sapma yoktur."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField23">
@@ -909,7 +903,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel45">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Beschreibungen und Anh&#xe4;nge :"/>
+                <Property name="text" type="java.lang.String" value="A&#xe7;&#x131;klamalar ve Ekler :"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -917,8 +911,8 @@
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Inspektionsergebnisse">
-                <Property name="tabTitle" type="java.lang.String" value="Inspektionsergebnisse"/>
+              <JTabbedPaneConstraints tabName="Muayne Sonu&#xe7;lar&#x131;">
+                <Property name="tabTitle" type="java.lang.String" value="Muayne Sonu&#xe7;lar&#x131;"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -927,7 +921,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane2" pref="668" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="683" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -969,8 +963,8 @@
         <Container class="javax.swing.JPanel" name="jPanel5">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Pers&#xf6;nliche Angaben">
-                <Property name="tabTitle" type="java.lang.String" value="Pers&#xf6;nliche Angaben"/>
+              <JTabbedPaneConstraints tabName="Personel Bilgileri">
+                <Property name="tabTitle" type="java.lang.String" value="Personel Bilgileri"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -980,7 +974,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="656" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="671" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>

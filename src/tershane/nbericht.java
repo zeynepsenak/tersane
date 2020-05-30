@@ -309,15 +309,15 @@ public class nbericht extends javax.swing.JFrame {
         if(bericht.equals("Bericht 1")){
             switch (x[2]) {
                 case "B1":
-                    new Bericht1().setVisible(true);
+                    new Bericht1(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 case "B1-B2":
-                    new Bericht1().setVisible(true);
+                    new Bericht1(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 case "Admin":
-                    new Bericht1().setVisible(true);
+                    new Bericht1(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 default:

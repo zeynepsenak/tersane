@@ -1,11 +1,25 @@
 package tershane;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.PdfAction;
+import com.itextpdf.text.pdf.PdfDestination;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.File;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.ss.usermodel.ClientAnchor;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Drawing;
@@ -41,21 +55,21 @@ public class excelwrite {
         sheet.addMergedRegion(new CellRangeAddress(1,1,7,27));
         row = sheet.createRow(1);
         cell = row.createCell(7);
-        cell.setCellValue("Inspektionsbericht für magnetische Partikel");
+        cell.setCellValue("Manyetik Parçacık Muayene Raporu");
         cell.setCellStyle(headerCellStyle);
         
 
         //create info rows - general info & gerat info
-        createInfoRows(workbook, sheet, "Kunde", "Inspektionsverfahren", "Seite", firm, inver, seite, 2, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
-        createInfoRows(workbook, sheet, "Projectname", "Inspektionsumfang", "Bericht Nr", proje, inumfang, bnummer, 3, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
-        createInfoRows(workbook, sheet, "Inspektionsstandort", "Zeichnung Nr", "Bericht Datum", stando, znr, bdatum, 4, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
-        createInfoRows(workbook, sheet, "Inspektionsstandard", "Zustand der Oberfläche", "Auftragsnr", instndrt,zober, aunr, 5, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
-        createInfoRows(workbook, sheet, "Auswertungsstandard", "Prüfungsstand", "Angebot Nr", austndrt, pstand, annr, 6, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
+        createInfoRows(workbook, sheet, "Müşteri", "Muayne Prosedürü", "Sayfa No", firm, inver, seite, 2, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
+        createInfoRows(workbook, sheet, "Proje Adı", "Muayne Kapsamı", "Rapor No", proje, inumfang, bnummer, 3, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
+        createInfoRows(workbook, sheet, "Test Yeri", "Resim No", "Rapor Tarihi", stando, znr, bdatum, 4, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
+        createInfoRows(workbook, sheet, "Muayne Standardı", "Yüzey Durumu", "İş Emri No", instndrt,zober, aunr, 5, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
+        createInfoRows(workbook, sheet, "Değerlen. Standardı", "Muayne Aşaması", "Teklif No", austndrt, pstand, annr, 6, 0, 2, 3, 15, 16, 18, 19, 22, 23, 25, 26, 27 );
         
         sheet.addMergedRegion(new CellRangeAddress(7,7,0,27));
         row = sheet.createRow(7);
         cell = row.createCell(0);
-        cell.setCellValue("Gerätsinformationen");
+        cell.setCellValue("Ekimpan Bilgileri");
         cell.setCellStyle(headerCellStyle);
         
         createInfoRows(workbook, sheet, "Polabstand", "Untersuchungsbereich", "Oberflächentemperature", polabst, untber, obertemp, 8, 0, 2, 3, 9, 10, 15, 16, 21, 22,  24, 25, 27);

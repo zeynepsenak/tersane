@@ -251,19 +251,19 @@ public class Bericht2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 450));
 
-        k.setText("Kunde : ");
+        k.setText("Müşteri :");
 
-        p.setText("Projectname :");
+        p.setText("Proje Adı: ");
 
-        jLabel2.setText("Inspektionsstandort : ");
+        jLabel2.setText("Test Yeri :");
 
-        jLabel3.setText("Inspektionsstandard :");
+        jLabel3.setText("Muayne Standardı / Sınıfı :");
 
-        jLabel4.setText("Auswertungsstandard :");
+        jLabel4.setText("Değerlendirme Standardı :");
 
-        jLabel5.setText("Inspektionsumfang :");
+        jLabel5.setText("Muayne Kapsamı :");
 
-        jLabel6.setText("Zeichnung Nr :");
+        jLabel6.setText("Resim No :");
 
         kunde.setText("Kunde");
 
@@ -277,27 +277,27 @@ public class Bericht2 extends javax.swing.JFrame {
 
         jTextField5.setText("-");
 
-        jLabel7.setText("Inspektionsverfahren :");
+        jLabel7.setText("Muayne Prosedürü :");
 
         jTextField6.setText("P-101-004");
 
-        jLabel8.setText("Zustand der Oberfläche :");
+        jLabel8.setText("Yüzey Durumu :");
 
-        jLabel9.setText("Prüfungsstand :");
+        jLabel9.setText("Muayne Aşaması :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nach dem Schweissen", "vor dem Schweissen", "unbehandelt", "behandelt" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kaynak Sonrası", "Kaynak Öncesi", "İşlenmemiş", "İşlem görmüş" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "unbehandelt", "behandelt" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "İşlenmemiş", "İşlem görmüş" }));
 
-        jLabel10.setText("Seite :");
+        jLabel10.setText("Sayfa :");
 
         jTextField7.setText("1");
 
-        jLabel11.setText("Bericht Nr :");
+        jLabel11.setText("Rapor No :");
 
-        jLabel12.setText("Bericht Datum : ");
+        jLabel12.setText("Rapor Tarihi :");
 
-        jLabel14.setText("Auftragsnr :");
+        jLabel14.setText("İş Emri No :");
 
         bnr.setText("tarih+ogunki kaçıncı");
 
@@ -305,7 +305,7 @@ public class Bericht2 extends javax.swing.JFrame {
 
         jLabel17.setText("seçilen gelcek");
 
-        jLabel18.setText("Angebot Nr :");
+        jLabel18.setText("Teklif No :");
 
         jLabel19.setText("seçilen gelcek");
 
@@ -315,29 +315,25 @@ public class Bericht2 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(k, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(p, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(k, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(kunde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(standort)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField6)))
+                    .addComponent(jTextField6)
+                    .addComponent(kunde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(standort)
+                    .addComponent(jTextField2)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4)
+                    .addComponent(jTextField5))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -361,7 +357,7 @@ public class Bericht2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,17 +414,17 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Project Informationen", jPanel1);
+        jTabbedPane1.addTab("Proje Bilgileri", jPanel1);
 
-        jLabel15.setText("Polabstand :");
+        jLabel15.setText("Kutup Mesafesi :");
 
-        jLabel16.setText("Gerät :");
+        jLabel16.setText("Cihaz :");
 
-        jLabel20.setText("MP Trägermedium :");
+        jLabel20.setText("MP Taşıyıcı Ortam :");
 
-        jLabel21.setText("Magnetisierungstechnik :");
+        jLabel21.setText("Mıknatıslama Tekniği :");
 
-        jLabel22.setText("Entfernung des Lichts :");
+        jLabel22.setText("Işık Mesafesi :");
 
         jTextField1.setText("100 mm");
 
@@ -441,13 +437,13 @@ public class Bericht2 extends javax.swing.JFrame {
 
         jTextField10.setText("W/m2");
 
-        jLabel23.setText("UV-Lichtintensität :");
+        jLabel23.setText("UV-Işık Şiddeti :");
 
         jTextField11.setText("mm");
 
-        jLabel24.setText("Untersuchungsbereich :");
+        jLabel24.setText("Muayne Bölgesi :");
 
-        jLabel25.setText("Strom Art :");
+        jLabel25.setText("Akım Tipi :");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "DC" }));
 
@@ -455,29 +451,29 @@ public class Bericht2 extends javax.swing.JFrame {
 
         jTextField13.setText("1200 Lux");
 
-        jLabel27.setText("Testmedium :");
+        jLabel27.setText("Muayne Ortamı :");
 
-        jLabel28.setText("Entmagnetiierung :");
+        jLabel28.setText("Mıknatıs Giderimi :");
 
-        jLabel29.setText("Wärmebehandlung :");
+        jLabel29.setText("Isıl İşlemi :");
 
-        jLabel30.setText("Oberflächentemperature:");
+        jLabel30.setText("Yüzey Sıcaklığı :");
 
         jTextField17.setText("20C");
 
-        jLabel31.setText("Gauss-Feldstärke :");
+        jLabel31.setText("Muayne Bölgesindeki Alan Şid. :");
 
         jTextField18.setText("3.2 kA/m");
 
-        jLabel32.setText("Zustand der Oberfläche :");
+        jLabel32.setText("Yüzey :");
 
         jTextField19.setText("Mahlen");
 
-        jLabel33.setText("Identifizierung von Lichtgeräten :");
+        jLabel33.setText("Işık Cihazı Tanıma :");
 
         jTextField20.setText("***");
 
-        jLabel34.setText("Beleuctungstest Datum/Nummer :");
+        jLabel34.setText("Kaldırma Testi Tarih / No :");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -507,30 +503,31 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField19)
                             .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField16, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField17, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField18)
-                            .addComponent(jTextField13)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                            .addComponent(jTextField20)
+                            .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                            .addComponent(jTextField13)
                             .addComponent(jTextField21))))
                 .addContainerGap())
         );
@@ -613,10 +610,10 @@ public class Bericht2 extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        jTabbedPane1.addTab("Gerätinformationen", jPanel2);
+        jTabbedPane1.addTab("Cihaz Bilgileri", jPanel2);
 
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tershane/2.1.jpeg"))); // NOI18N
-        jLabel35.setText("Stumpfscweissung");
+        jLabel35.setText("Köşe Kaynağı");
         jLabel35.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel35MouseClicked(evt);
@@ -624,7 +621,7 @@ public class Bericht2 extends javax.swing.JFrame {
         });
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tershane/2.2.jpeg"))); // NOI18N
-        jLabel36.setText("Filletschweissung");
+        jLabel36.setText("Alın Kyanağı");
         jLabel36.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel36MouseClicked(evt);
@@ -647,23 +644,23 @@ public class Bericht2 extends javax.swing.JFrame {
 
         jLabel37.setText("Orte der Diskontinuität");
 
-        jLabel38.setText("BM                                                              UNEDLES METALL");
+        jLabel38.setText("BM                                                                      ANA METAL");
 
-        jLabel39.setText("HAZ                                               WÄRMEBETROFFENE ZONE");
+        jLabel39.setText("HAZ                                                ISIDAN ETKİLENEN BÖLGE");
 
-        jLabel40.setText("W                                                                     SCHWEIßUNG");
+        jLabel40.setText("W                                                                            KAYNAK");
 
-        jLabel41.setText("B                                                                                   FASE");
+        jLabel41.setText("B                                                                      KAYNAK AĞZI");
 
-        jLabel42.setText("Standardabweichungen :");
+        jLabel42.setText("Standart Sapmalar :");
 
-        jLabel43.setText("Inspektionstermine :");
+        jLabel43.setText("Muayne Tarihleri :");
 
-        jTextField22.setText("Es gibt nicht!");
+        jTextField22.setText("Satandart sapma yoktur.");
 
         datumm.setText("date");
 
-        jLabel45.setText("Beschreibungen und Anhänge :");
+        jLabel45.setText("Açıklamalar ve Ekler :");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -679,7 +676,7 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
                     .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -688,9 +685,9 @@ public class Bericht2 extends javax.swing.JFrame {
                             .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField22, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                            .addComponent(jTextField23)
-                            .addComponent(datumm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jTextField22, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                            .addComponent(datumm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField23)))
                     .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(20, 20, 20))
@@ -738,7 +735,7 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab(" Extra", jPanel3);
+        jTabbedPane1.addTab("Ekstra", jPanel3);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -758,7 +755,7 @@ public class Bericht2 extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -769,7 +766,7 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Inspektionsergebnisse", jPanel4);
+        jTabbedPane1.addTab("Muayne Sonuçları", jPanel4);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -790,7 +787,7 @@ public class Bericht2 extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -801,7 +798,7 @@ public class Bericht2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Persönliche Angaben", jPanel5);
+        jTabbedPane1.addTab("Personel Bilgileri", jPanel5);
 
         jLabel1.setText("Inspektionsbericht für magnetische Partikel");
 
