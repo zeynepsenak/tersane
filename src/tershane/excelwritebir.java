@@ -1,13 +1,5 @@
 package tershane;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.pdf.PdfAction;
-import com.itextpdf.text.pdf.PdfDestination;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
-import java.io.File;
+import com.itextpdf.text.DocumentException;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import java.io.FileNotFoundException;
@@ -15,10 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.ss.usermodel.ClientAnchor;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Drawing;
@@ -30,13 +18,24 @@ import org.apache.poi.util.IOUtils;
 import org.apache.poi.util.Units;
 
 public class excelwritebir {
-    public void write(String inp, String[][] data, String[][] data2, String firm, String proje, String stando, String instndrt, String austndrt, String inver, String znr, String zober, String pstand, String seite, String bnummer, String bdatum, String aunr, String annr, String ekipman_adı, String cihaz, String cenerji, String odak, String pozs, String fodakuz, String kursunek, String filtre, String fmark, String filmtip, String IQI, String ışıntaraf, String filmtaraf, String fişlemetek, String sıc, String geoygöl, String ısılişlem, String ononiki, String ononaltı, String onyirmidört, String onotuzaltı, String onkırksekiz, String otuzkırk, String gfilm, String rfilm, String bir, String iki, String üç, String dört, String beş, String altı, String mtarih, String ek) throws IOException{
+    xlstopdf xp = new xlstopdf();
+    public void write(String inp, String[][] data, String[][] data2, String firm, String proje, String stando, String instndrt, String austndrt, String inver, String znr, String zober, String pstand, String seite, String bnummer, String bdatum, String aunr, String annr, String ekipman_adı, String cihaz, String cenerji, String odak, String pozs, String fodakuz, String kursunek, String filtre, String fmark, String filmtip, String IQI, String ışıntaraf, String filmtaraf, String fişlemetek, String sıc, String geoygöl, String ısılişlem, String ononiki, String ononaltı, String onyirmidört, String onotuzaltı, String onkırksekiz, String otuzkırk, String gfilm, String rfilm, String bir, String iki, String üç, String dört, String beş, String altı, String mtarih, String ek) throws IOException, DocumentException{
         String fna =  "C:\\Users\\zsena\\Desktop\\" + firm + "_" + proje + ".xls";
+        String pdf =  "C:\\Users\\zsena\\Desktop\\" + firm + "_" + proje + ".pdf";
         Workbook workbook = new HSSFWorkbook();
         Sheet sheet = workbook.createSheet("Inspektionsbericht für magnetische Partikel");
         
+        
+        //create vertical pink cell style
+        CellStyle styleVertical = workbook.createCellStyle();
+        styleVertical.setRotation((short)90);
+        styleVertical.setFillForegroundColor(IndexedColors.ROSE.getIndex());
+        styleVertical.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        
+        
         //create pink cell style
         CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setWrapText(true);
         headerCellStyle.setFillForegroundColor(IndexedColors.ROSE.getIndex());
         headerCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         
@@ -106,7 +105,7 @@ public class excelwritebir {
         cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(8,9,27,27));
-        cell = row.createCell(26);
+        cell = row.createCell(27);
         cell.setCellValue("Filtreler");
         cell.setCellStyle(headerCellStyle);
         
@@ -399,27 +398,33 @@ public class excelwritebir {
         sheet.addMergedRegion(new CellRangeAddress(18,18,5,10));
         cell = row.createCell(6);
         cell.setCellValue("KABUL OK");
+        cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(18,18,11,12));
         cell = row.createCell(11);
         cell.setCellValue("TAMİR R");
+        cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(18,18,13,17));
         cell = row.createCell(13);
         cell.setCellValue("KES  C/O");
+        cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(18,18,18,23));
         cell = row.createCell(18);
         cell.setCellValue("FİLM TEKRARI RS");
+        cell.setCellStyle(headerCellStyle);
         
         sheet.addMergedRegion(new CellRangeAddress(18,18,24,27));
         cell = row.createCell(24);
         cell.setCellValue("EKSTRA FİLM  EF");
+        cell.setCellStyle(headerCellStyle);
         
         row = sheet.createRow(19);
         sheet.addMergedRegion(new CellRangeAddress(19,24,0,1));
         cell = row.createCell(0);
         cell.setCellValue("Çekim Düzenlemesi");
+        cell.setCellStyle(styleVertical);
         
         int pictureIdx;
         try ( //resimler
@@ -521,70 +526,70 @@ public class excelwritebir {
         
         cell = row.createCell(8);
         cell.setCellValue("Malzeme Cinsi");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(9);
         cell.setCellValue("Kaynak Yönt.");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
        
         cell = row.createCell(10);
         cell.setCellValue("Kaynakçı No");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(11);
         cell.setCellValue("POZİSYON");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         sheet.addMergedRegion(new CellRangeAddress(39,39,12,14));
         cell = row.createCell(12);
         cell.setCellValue("Kalınlık(mm)");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(15);
         cell.setCellValue("Penetremetre");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(16);
         cell.setCellValue("Görünen Tel");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         sheet.addMergedRegion(new CellRangeAddress(39,39,17,18));
         cell = row.createCell(17);
         cell.setCellValue("Yoğunluk");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(19);
         cell.setCellValue("10x12");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(20);
         cell.setCellValue("10x16");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         sheet.addMergedRegion(new CellRangeAddress(39,39,20,21));
         cell = row.createCell(20);
         cell.setCellValue("10x24");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(21);
         cell.setCellValue("10x36");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(22);
         cell.setCellValue("10x48");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(23);
         cell.setCellValue("30x40");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
        
         cell = row.createCell(24);
         cell.setCellValue("Hata Bölgesi");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(25);
         cell.setCellValue("Hata Tipi");
-        cell.setCellStyle(headerCellStyle);
+        cell.setCellStyle(styleVertical);
         
         cell = row.createCell(26);
         cell.setCellValue("ön Değerlen.");
@@ -596,7 +601,7 @@ public class excelwritebir {
         
         
         int count=40;
-        for(int r=0; r<5; r++ ){
+        for(int r=0; r<2; r++ ){
             row = sheet.createRow(count);
             cell = row.createCell(0);
         cell.setCellValue(data[r][0]);
@@ -669,34 +674,34 @@ public class excelwritebir {
             count = count + 1;
         }
         
-        row = sheet.createRow(45);
+        row = sheet.createRow(43);
         
-        sheet.addMergedRegion(new CellRangeAddress(45,45,0,4));
+        sheet.addMergedRegion(new CellRangeAddress(43,43,0,4));
         cell = row.createCell(0);
         cell.setCellValue("Personel Bilgileri");
         cell.setCellStyle(headerCellStyle);
         
-        sheet.addMergedRegion(new CellRangeAddress(45,45,5,14));
+        sheet.addMergedRegion(new CellRangeAddress(43,43,5,14));
         cell = row.createCell(5);
         cell.setCellValue("Filmi Çeken");
         cell.setCellStyle(headerCellStyle);
         
-        sheet.addMergedRegion(new CellRangeAddress(45,45,15,19));
+        sheet.addMergedRegion(new CellRangeAddress(43,43,15,19));
         cell = row.createCell(15);
         cell.setCellValue("Değerlendiren");
         cell.setCellStyle(headerCellStyle);
         
-        sheet.addMergedRegion(new CellRangeAddress(45,45,20,24));
+        sheet.addMergedRegion(new CellRangeAddress(43,43,20,24));
         cell = row.createCell(20);
         cell.setCellValue("Onay");
         cell.setCellStyle(headerCellStyle);
         
-        sheet.addMergedRegion(new CellRangeAddress(45,45,25,27));
+        sheet.addMergedRegion(new CellRangeAddress(43,43,25,27));
         cell = row.createCell(25);
         cell.setCellValue("Müşteri");
         cell.setCellStyle(headerCellStyle);
         
-        count = 46;
+        count = 44;
         for(int y=0; y<4; y++){
             row = sheet.createRow(count);
         
@@ -768,10 +773,10 @@ public class excelwritebir {
         widthExcel = 0.11f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(14, width256);
-        widthExcel = 5.90f;
+        widthExcel = 4.20f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(15, width256);
-        widthExcel = 1.20f;
+        widthExcel = 2.20f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(16, width256);
         widthExcel = 6.00f;
@@ -783,13 +788,13 @@ public class excelwritebir {
         widthExcel = 1.90f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(19, width256);
-        widthExcel = 1.50f;
+        widthExcel = 2.50f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(20, width256);
         widthExcel = 0.11f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(21, width256);
-        widthExcel = 6.00f;
+        widthExcel = 4.30f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(22, width256);
         widthExcel = 1.00f;
@@ -813,6 +818,8 @@ public class excelwritebir {
         } catch (FileNotFoundException ex) {
             System.out.println(ex);
         }
+        
+        xp.pdf(workbook, fna, pdf);
         
         
     }
