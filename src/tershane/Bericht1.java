@@ -1,4 +1,3 @@
-
 package tershane;
 
 import java.text.ParseException;
@@ -960,11 +959,11 @@ public class Bericht1 extends javax.swing.JFrame {
         getContentPane().add(jTabbedPane1);
         jTabbedPane1.setBounds(0, 40, 730, 294);
 
-        jLabel6.setText("Röntgenuntersuchungsbericht");
+        jLabel6.setText("Radyografik Muayne Raporu");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(10, 10, 710, 16);
 
-        jButton1.setText("als Excel & PDF speichern");
+        jButton1.setText("Excel & PDF belgeleri oluştur");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -973,7 +972,7 @@ public class Bericht1 extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(529, 350, 200, 25);
 
-        jButton2.setText("Zürückgehen");
+        jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

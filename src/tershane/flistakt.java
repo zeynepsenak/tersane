@@ -83,15 +83,15 @@ public class flistakt extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setText("Um ausgewählte Firma Informationen zu aktualisieren --> Klicken");
+        jLabel1.setText("Seçilen firmanın bilgilerini güncellemek için --> tıklayınız");
 
         jLabel2.setText("ID:");
 
-        jLabel3.setText("Name:");
+        jLabel3.setText("İsim:");
 
-        jLabel4.setText("Standort:");
+        jLabel4.setText("Soyisim:");
 
-        jLabel5.setText("Auftrag Nr:");
+        jLabel5.setText("İş Emri No's:");
 
         jButton1.setText("Enter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +100,7 @@ public class flistakt extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Angebot Nr:");
+        jLabel6.setText("Teklif No's:");
 
         fn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -122,14 +122,14 @@ public class flistakt extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Aktualisieren");
+        jButton2.setText("Güncelle");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Abbrechen");
+        jButton3.setText("Cancel");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -148,7 +148,7 @@ public class flistakt extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,7 +164,7 @@ public class flistakt extends javax.swing.JFrame {
                                     .addComponent(fs)
                                     .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jScrollPane1))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 4, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(aw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

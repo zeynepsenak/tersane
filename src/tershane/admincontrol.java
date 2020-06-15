@@ -26,9 +26,9 @@ public class admincontrol extends javax.swing.JFrame {
  
             DefaultTableModel model = new DefaultTableModel(); 
             model.addColumn("ID"); 
-            model.addColumn("Name");
-            model.addColumn("Nachname"); 
-            model.addColumn("Berichtigung");
+            model.addColumn("İsim");
+            model.addColumn("Soyisim"); 
+            model.addColumn("Yetki");
             
             Object[] rowData = new Object[4];
             
@@ -63,30 +63,30 @@ public class admincontrol extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Liste der Mitarbeiter");
+        jLabel1.setText("Çalışanlar listesi");
 
-        jButton1.setText("Die Information des ausgewählten Person aktualisieren ");
+        jButton1.setText("Seçili çalışanın bilgilerini güncelle");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("neuen Mitarbeiter hinzufügen");
+        jButton2.setText("Yeni çalışan ekle");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Meine Profilinformationen aktualisieren");
+        jButton3.setText("Kendi profil bilgilerimi güncelle");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("neue Bericht erstellen");
+        jButton5.setText("Yeni rapor oluştur");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -106,23 +106,23 @@ public class admincontrol extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        jLabel5.setText("Für die Aktualisierung wählen Sie die Mitarbeiter aus der Tabelle");
+        jLabel5.setText("Bilgisini güncellemek istediğiniz çalışanı listeden seçiniz.");
 
-        jButton4.setText("neue Firma erstellen");
+        jButton4.setText("Yeni firma oluştur");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Firma Informationen einsehen und aktualisieren");
+        jButton6.setText("Firma bilgilerini incele/güncelle");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Ausloggen");
+        jButton7.setText("Çıkış Yap");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);

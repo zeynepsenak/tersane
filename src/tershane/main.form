@@ -87,7 +87,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Passwort"/>
+        <Property name="text" type="java.lang.String" value="&#x15e;ifre :"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="idno">
@@ -104,7 +104,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Anmelden"/>
+        <Property name="text" type="java.lang.String" value="Giri&#x15f; Yap"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -116,7 +116,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="id"/>
+        <Property name="text" type="java.lang.String" value="ID :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="antwort">

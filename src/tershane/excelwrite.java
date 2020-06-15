@@ -1,7 +1,5 @@
 package tershane;
 
-
-import com.aspose.cells.SaveFormat;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import java.io.FileNotFoundException;
@@ -379,7 +377,14 @@ public class excelwrite {
             System.out.println(ex);
         }
         
-        xp.pdf(workbook, fna, pdf);
+        /*try(FileOutputStream outputStream = new FileOutputStream(pdf)) {
+            workbook.write(outputStream);
+            outputStream.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex);
+        }*/
+        
+        xp.pdf(fna, pdf);
         
         
     }

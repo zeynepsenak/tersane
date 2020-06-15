@@ -42,24 +42,24 @@ public class upmarb extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setText("Die Informationen der Mitarbeiter aktualisieren");
+        jLabel1.setText("Çalışan bilgileri güncelleme");
 
-        jLabel2.setText("Name");
+        jLabel2.setText("İsim :");
 
-        jLabel3.setText("Nachname");
+        jLabel3.setText("Soyisim :");
 
         jLabel4.setText("ID");
 
-        jLabel5.setText("Berichtigung");
+        jLabel5.setText("Yetki :");
 
-        jButton1.setText("Aktualisieren");
+        jButton1.setText("Bilgileri güncelle");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Abbrechen");
+        jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -68,7 +68,7 @@ public class upmarb extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "B1", "B2", "B1-B2", "Admin" }));
 
-        jButton3.setText("Löschen");
+        jButton3.setText("Çalışanı Sil");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -147,7 +147,7 @@ public class upmarb extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
-        setBounds(0, 0, 327, 325);
+        setBounds(0, 0, 313, 309);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

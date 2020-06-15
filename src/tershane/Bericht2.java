@@ -801,16 +801,16 @@ public class Bericht2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Personel Bilgileri", jPanel5);
 
-        jLabel1.setText("Inspektionsbericht für magnetische Partikel");
+        jLabel1.setText("Manyetik Parçacık Muayne Raporu ");
 
-        jButton3.setText("als Excel & PDF speichern");
+        jButton3.setText("Excel & PDF belgesi oluştur");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Zürückgehen");
+        jButton4.setText("Cancel");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

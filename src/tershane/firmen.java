@@ -8,9 +8,7 @@ public class firmen {
     private int id;
     private String name;
     private String location;
-    //private int[] jobord = new int[100];
     private String jobord;
-    //private String[] offno = new String[100];
     private String offno;
     
     public firmen(int i, String n, String l, String j, String o){

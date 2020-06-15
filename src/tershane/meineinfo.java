@@ -44,13 +44,13 @@ public class meineinfo extends javax.swing.JFrame {
 
         jLabel1.setText("ID");
 
-        jLabel2.setText("Name");
+        jLabel2.setText("İsim :");
 
-        jLabel3.setText("Nachname");
+        jLabel3.setText("Soyisim :");
 
-        jLabel4.setText("Berichtigung");
+        jLabel4.setText("Yetki :");
 
-        jLabel5.setText("Pass");
+        jLabel5.setText("Şifre :");
 
         jLabel6.setText("Berichtigung");
 
@@ -62,14 +62,14 @@ public class meineinfo extends javax.swing.JFrame {
 
         jTextField1.setText("Pass");
 
-        jButton1.setText("Abbrechen");
+        jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Aktualisieren");
+        jButton2.setText("Güncelle");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

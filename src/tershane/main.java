@@ -31,7 +31,7 @@ public class main extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tershane/lock-xxl.png"))); // NOI18N
 
-        jLabel3.setText("Passwort");
+        jLabel3.setText("Şifre :");
 
         jButton1.setText("EXIT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -40,14 +40,14 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Anmelden");
+        jButton2.setText("Giriş Yap");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("id");
+        jLabel4.setText("ID :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

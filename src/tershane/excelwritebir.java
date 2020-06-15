@@ -19,7 +19,7 @@ import org.apache.poi.util.Units;
 
 public class excelwritebir {
     xlstopdf xp = new xlstopdf();
-    public void write(String inp, String[][] data, String[][] data2, String firm, String proje, String stando, String instndrt, String austndrt, String inver, String znr, String zober, String pstand, String seite, String bnummer, String bdatum, String aunr, String annr, String ekipman_adı, String cihaz, String cenerji, String odak, String pozs, String fodakuz, String kursunek, String filtre, String fmark, String filmtip, String IQI, String ışıntaraf, String filmtaraf, String fişlemetek, String sıc, String geoygöl, String ısılişlem, String ononiki, String ononaltı, String onyirmidört, String onotuzaltı, String onkırksekiz, String otuzkırk, String gfilm, String rfilm, String bir, String iki, String üç, String dört, String beş, String altı, String mtarih, String ek) throws IOException, DocumentException{
+    public void write(String inp, String[][] data, String[][] data2, String firm, String proje, String stando, String instndrt, String austndrt, String inver, String znr, String zober, String pstand, String seite, String bnummer, String bdatum, String aunr, String annr, String ekipman_adı, String cihaz, String cenerji, String odak, String pozs, String fodakuz, String kursunek, String filtre, String fmark, String filmtip, String IQI, String ışıntaraf, String filmtaraf, String fişlemetek, String sıc, String geoygöl, String ısılişlem, String ononiki, String ononaltı, String onyirmidört, String onotuzaltı, String onkırksekiz, String otuzkırk, String gfilm, String rfilm, String bir, String iki, String üç, String dört, String beş, String altı, String mtarih, String ek) throws IOException, DocumentException, Exception{
         String fna =  "C:\\Users\\zsena\\Desktop\\" + firm + "_" + proje + ".xls";
         String pdf =  "C:\\Users\\zsena\\Desktop\\" + firm + "_" + proje + ".pdf";
         Workbook workbook = new HSSFWorkbook();
@@ -819,7 +819,7 @@ public class excelwritebir {
             System.out.println(ex);
         }
         
-        xp.pdf(workbook, fna, pdf);
+        xp.pdf(fna, pdf);
         
         
     }

@@ -179,7 +179,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Name der Firma"/>
+        <Property name="text" type="java.lang.String" value="Firma Ad&#x131; :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox2">
@@ -194,12 +194,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Projektname"/>
+        <Property name="text" type="java.lang.String" value="Proje Ad&#x131; :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Bericht Datum"/>
+        <Property name="text" type="java.lang.String" value="Rapor Tarihi :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
@@ -227,12 +227,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Der Operator"/>
+        <Property name="text" type="java.lang.String" value="Operat&#xf6;r :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Der Bewerter"/>
+        <Property name="text" type="java.lang.String" value="De&#x11f;erlendiren :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox5">
@@ -247,7 +247,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Neuen Bericht erstellen"/>
+        <Property name="text" type="java.lang.String" value="Rapor olu&#x15f;tur"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
@@ -255,12 +255,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Auftrag Nr "/>
+        <Property name="text" type="java.lang.String" value="&#x130;&#x15f; Emri No :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Angebot Nr"/>
+        <Property name="text" type="java.lang.String" value="Teklif No :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox4">
@@ -295,7 +295,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Die Best&#xe4;tigung"/>
+        <Property name="text" type="java.lang.String" value="Onaylayan :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox7">
@@ -315,7 +315,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Abbrechen"/>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>

@@ -1021,12 +1021,12 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Inspektionsbericht f&#xfc;r magnetische Partikel"/>
+        <Property name="text" type="java.lang.String" value="Manyetik Par&#xe7;ac&#x131;k Muayne Raporu "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="als Excel &amp; PDF speichern"/>
+        <Property name="text" type="java.lang.String" value="Excel &amp; PDF belgesi olu&#x15f;tur"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
@@ -1034,7 +1034,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Z&#xfc;r&#xfc;ckgehen"/>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>

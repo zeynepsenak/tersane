@@ -90,11 +90,11 @@ public class nbericht extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bericht 1", "Bericht 2" }));
 
-        jLabel2.setText("Name der Firma");
+        jLabel2.setText("Firma Adı :");
 
-        jLabel3.setText("Projektname");
+        jLabel3.setText("Proje Adı :");
 
-        jLabel4.setText("Bericht Datum");
+        jLabel4.setText("Rapor Tarihi :");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Schweißertest", "Testplatte" }));
 
@@ -105,20 +105,20 @@ public class nbericht extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Der Operator");
+        jLabel5.setText("Operatör :");
 
-        jLabel6.setText("Der Bewerter");
+        jLabel6.setText("Değerlendiren :");
 
-        jButton2.setText("Neuen Bericht erstellen");
+        jButton2.setText("Rapor oluştur");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
             }
         });
 
-        jLabel7.setText("Auftrag Nr ");
+        jLabel7.setText("İş Emri No :");
 
-        jLabel8.setText("Angebot Nr");
+        jLabel8.setText("Teklif No :");
 
         jComboBox4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -132,11 +132,11 @@ public class nbericht extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setText("Die Bestätigung");
+        jLabel11.setText("Onaylayan :");
 
         jLabel12.setText("jLabel12");
 
-        jButton3.setText("Abbrechen");
+        jButton3.setText("Cancel");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
