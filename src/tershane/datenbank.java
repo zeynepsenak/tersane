@@ -143,8 +143,25 @@ public class datenbank {
         }       
     }
     
+    public String updpass(int i, String a){
+        query = "update employee set pass=? where id =?";
+            
+            
+        try {
+            ps = conn.prepareStatement(query);
+            ps.setInt (2, i); 
+            ps.setString (1, a);
+
+            ps.execute();
+            return "upd succes";
+        } catch (SQLException ex) {
+            Logger.getLogger(datenbank.class.getName()).log(Level.SEVERE, null, ex);
+            return "Ein Fehler ist aufgetreten!";
+        }       
+    }
+    
     public String[] get_info(int i){
-        String[] info = new String[3];
+        String[] info = new String[4];
         try{
             ps = conn.prepareStatement("SELECT * FROM employee WHERE id=?");
             ps.setInt(1, i);
@@ -153,6 +170,7 @@ public class datenbank {
             if(rs.next()){
                 info[0] = rs.getString(2);
                 info[1] = rs.getString(3);
+                info[3] = rs.getString(4);
                 info[2] = rs.getString(5);    
             
             }

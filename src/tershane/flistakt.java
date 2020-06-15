@@ -3,16 +3,22 @@ package tershane;
 
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-
 /*
 @author Zeynep Sena Karabacak
 */
 public class flistakt extends javax.swing.JFrame {
     fdatenbank f = new fdatenbank();
-
+    datenbank func = new datenbank();
+    public static String kk ;
     public flistakt() {
         initComponents();
+        
+    }
+    public flistakt(String id){
+        kk = id;
+        initComponents();
         f.fdb_con();
+        
         
          DefaultTableModel model = new DefaultTableModel(); 
             model.addColumn("ID"); 
@@ -36,6 +42,8 @@ public class flistakt extends javax.swing.JFrame {
            
             jTable1.setModel(model);
     }
+    
+   
 
   
     @SuppressWarnings("unchecked")
@@ -58,6 +66,7 @@ public class flistakt extends javax.swing.JFrame {
         ang = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         aw = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,6 +129,13 @@ public class flistakt extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("Abbrechen");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,34 +143,36 @@ public class flistakt extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(aw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(auf)
-                                            .addComponent(ang)
-                                            .addComponent(fn)
-                                            .addComponent(fs)
-                                            .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(jScrollPane1))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(auf)
+                                    .addComponent(ang)
+                                    .addComponent(fn)
+                                    .addComponent(fs)
+                                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane1))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(aw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -186,11 +204,17 @@ public class flistakt extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(ang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(aw, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(aw, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(8, 8, 8))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addContainerGap())))
         );
 
         pack();
@@ -217,19 +241,36 @@ public class flistakt extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int i = Integer.parseInt(id.getText());
-        String n = fn.getText();
-        String l = fs.getText();
-        String a = auf.getText();
-        String o = ang.getText();
-        String ant = f.fdb_upd(i, n, l, a, o);
-            
-        if(ant.equals("upd succes")){
-            new admincontrol().setVisible(true);
-            this.setVisible(false);
+        if(!("").equals(fn.getText())){
+           int i = Integer.parseInt(id.getText());
+            String n = fn.getText();
+            String l = fs.getText();
+            String a = auf.getText();
+            String o = ang.getText();
+            String ant = f.fdb_upd(i, n, l, a, o);
+
+            if(ant.equals("upd succes")){
+                func.db_con();
+                int ii = Integer.parseInt(kk);
+                func.db_con();
+                String[] info = func.get_info(ii);
+                String log_ant = func.login(ii, info[3]);
+                System.out.println(log_ant);
+                if(log_ant.equals("Admin")){
+                    new admincontrol(kk).setVisible(true);
+                    this.setVisible(false);
+                }else if(log_ant.equals("Mitarbeiter")){
+                    new mitarbeiter(kk).setVisible(true);
+                    this.setVisible(false);
+                }
+            }else{
+                aw.setText(ant);
+            } 
         }else{
-            aw.setText(ant);
+            aw.setText("Sie haben keine Firma ausgewählen!");
         }
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void fnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fnMouseClicked
@@ -243,6 +284,22 @@ public class flistakt extends javax.swing.JFrame {
     private void aufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aufActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aufActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        func.db_con();
+        int ii = Integer.parseInt(kk);
+        func.db_con();
+        String[] info = func.get_info(ii);
+        String log_ant = func.login(ii, info[3]);
+        System.out.println(log_ant);
+        if(log_ant.equals("Admin")){
+            new admincontrol(kk).setVisible(true);
+            this.setVisible(false);
+        }else if(log_ant.equals("Mitarbeiter")){
+            new mitarbeiter(kk).setVisible(true);
+            this.setVisible(false);
+         }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
 
@@ -262,6 +319,7 @@ public class flistakt extends javax.swing.JFrame {
     private javax.swing.JLabel id;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

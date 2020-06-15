@@ -16,8 +16,10 @@ public class Bericht1 extends javax.swing.JFrame {
         
         
     }
+    public static String id;
     
-    public Bericht1(String fname, String pnamen, String fs, String dat, String aunnr, String annr, String bew, String op, int i, String ben) {
+    public Bericht1(String kk, String fname, String pnamen, String fs, String dat, String aunnr, String annr, String bew, String op, int i, String ben) {
+        id = kk;
         datenbank func = new datenbank();
         initComponents();
         nbericht b = new nbericht();
@@ -296,6 +298,7 @@ public class Bericht1 extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -970,6 +973,15 @@ public class Bericht1 extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(529, 350, 200, 25);
 
+        jButton2.setText("Zürückgehen");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 350, 170, 25);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -1046,6 +1058,11 @@ public class Bericht1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new nbericht(id).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     
     public static void main(String args[]) {
         
@@ -1061,6 +1078,7 @@ public class Bericht1 extends javax.swing.JFrame {
     private javax.swing.JLabel bd;
     private javax.swing.JLabel bdbd;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox17;
     private javax.swing.JComboBox<String> jComboBox18;

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class nbericht extends javax.swing.JFrame {
         public String bericht, fnamen, fsn, pnamen, datn, aunrn, annrn, bewn, opn, besn;
         public int i;
+        public static String kk;
         datenbank func = new datenbank();
         fdatenbank f = new fdatenbank();
         main m = new main();
@@ -22,6 +23,7 @@ public class nbericht extends javax.swing.JFrame {
         initComponents();    
     }
     public nbericht(String id){
+        kk=id;
         initComponents();
         
         jLabel10.setText("Sie müssen alle Felder füllen!");
@@ -80,6 +82,7 @@ public class nbericht extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jComboBox7 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,11 +115,6 @@ public class nbericht extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jLabel7.setText("Auftrag Nr ");
 
@@ -138,6 +136,13 @@ public class nbericht extends javax.swing.JFrame {
 
         jLabel12.setText("jLabel12");
 
+        jButton3.setText("Abbrechen");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -147,13 +152,16 @@ public class nbericht extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox5, 0, 213, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox5, 0, 213, Short.MAX_VALUE)))
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(5, 5, 5)
@@ -230,14 +238,15 @@ public class nbericht extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -309,15 +318,15 @@ public class nbericht extends javax.swing.JFrame {
         if(bericht.equals("Bericht 1")){
             switch (x[2]) {
                 case "B1":
-                    new Bericht1(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
+                    new Bericht1(kk, fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 case "B1-B2":
-                    new Bericht1(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
+                    new Bericht1(kk,  fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 case "Admin":
-                    new Bericht1(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
+                    new Bericht1(kk, fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 default:
@@ -326,19 +335,19 @@ public class nbericht extends javax.swing.JFrame {
             }
             
         }else if(bericht.equals("Bericht 2")){
-                new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
+                new Bericht2(kk, fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                 this.setVisible(false);
             switch (x[2]) {
                 case "B2":
-                    new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
+                    new Bericht2(kk, fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 case "B1-B2":
-                    new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
+                    new Bericht2(kk, fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 case "Admin":
-                    new Bericht2(fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
+                    new Bericht2(kk, fnamen, pnamen, fsn, datn, aunrn, annrn, bewn, opn, i, besn).setVisible(true);
                     this.setVisible(false);
                     break;
                 default:
@@ -351,9 +360,21 @@ public class nbericht extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        func.db_con();
+        int i = Integer.parseInt(kk);
+        func.db_con();
+        String[] info = func.get_info(i);
+        String log_ant = func.login(i, info[3]);
+        System.out.println(log_ant);
+        if(log_ant.equals("Admin")){
+            new admincontrol(kk).setVisible(true);
+            this.setVisible(false);
+        }else if(log_ant.equals("Mitarbeiter")){
+            new mitarbeiter(kk).setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
     public static void main(String args[]) {
@@ -366,6 +387,7 @@ public class nbericht extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

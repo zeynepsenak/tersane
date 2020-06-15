@@ -118,7 +118,7 @@ public class main extends javax.swing.JFrame {
             new admincontrol(idd).setVisible(true);
             this.setVisible(false);
         }else if(log_ant.equals("Mitarbeiter")){
-            new mitarbeiter().setVisible(true);
+            new mitarbeiter(idd).setVisible(true);
             this.setVisible(false);
         }else if(log_ant.equals("not exist")){
             antwort.setText("ID Information oder Passwort ist falsch!");

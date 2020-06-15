@@ -1,25 +1,13 @@
 package tershane;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.pdf.PdfAction;
-import com.itextpdf.text.pdf.PdfDestination;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
-import java.io.File;
+
+import com.aspose.cells.SaveFormat;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.ss.usermodel.ClientAnchor;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Drawing;
@@ -30,10 +18,12 @@ import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.util.IOUtils;
 import org.apache.poi.util.Units;
 
+
 public class excelwrite {
-    //String[][] data,
+    xlstopdf xp = new xlstopdf();
     public void write(String[][] data, String[][] data2, String firm, String proje, String stando, String instndrt, String austndrt, String inver, String inumfang, String znr, String zober, String pstand, String seite, String bnummer, String bdatum, String aunr, String annr, String polabst, String gerat, String Mp, String MagTech, String Uv, String entlicht, String untber, String strom, String lmet, String tmed, String entmeg, String wbehandlung, String obertemp, String gauss, String zoberfl, String idlicht, String beltestdatnr, String sscw, String fscw, String sabw, String inter, String anhange) throws Exception{
         String fna =  "C:\\Users\\zsena\\Desktop\\" + firm + "_" + proje + ".xls";
+        String pdf =  "C:\\Users\\zsena\\Desktop\\" + firm + "_" + proje + ".pdf";
         Workbook workbook = new HSSFWorkbook();
         Sheet sheet = workbook.createSheet("Inspektionsbericht für magnetische Partikel");
         
@@ -263,7 +253,7 @@ public class excelwrite {
         cell.setCellValue("Onay");
         cell.setCellStyle(headerCellStyle);
         
-        sheet.addMergedRegion(new CellRangeAddress(39,39,25,26));
+        sheet.addMergedRegion(new CellRangeAddress(39,39,25,27));
         cell = row.createCell(25);
         cell.setCellValue("Müşteri");
         cell.setCellStyle(headerCellStyle);
@@ -289,7 +279,7 @@ public class excelwrite {
             cell = row.createCell(20);
             cell.setCellValue(data2[y][3]);
 
-            sheet.addMergedRegion(new CellRangeAddress(count,count,25,26));
+            sheet.addMergedRegion(new CellRangeAddress(count,count,25,27));
             cell = row.createCell(25);
             cell.setCellValue(data2[y][4]);
             
@@ -388,6 +378,8 @@ public class excelwrite {
         } catch (FileNotFoundException ex) {
             System.out.println(ex);
         }
+        
+        xp.pdf(workbook, fna, pdf);
         
         
     }
