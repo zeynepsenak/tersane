@@ -288,7 +288,7 @@ public class excelwrite {
         
         
         
-        float widthExcel = 5.11f;
+        float widthExcel = 4.71f;
         int width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(0, width256);
         widthExcel = 3.11f;
@@ -317,7 +317,7 @@ public class excelwrite {
         widthExcel = 1.20f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(9, width256);
-        widthExcel = 3.00f;
+        widthExcel = 2.50f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(10, width256);
         widthExcel = 2.00f;
@@ -332,40 +332,40 @@ public class excelwrite {
         widthExcel = 0.11f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(14, width256);
-        widthExcel = 5.90f;
+        widthExcel = 4.90f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(15, width256);
         widthExcel = 1.20f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(16, width256);
-        widthExcel = 6.00f;
+        widthExcel = 5.00f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(17, width256);
         widthExcel = 2.00f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(18, width256);
-        widthExcel = 1.90f;
+        widthExcel = 1.70f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(19, width256);
-        widthExcel = 1.50f;
+        widthExcel = 1.20f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(20, width256);
         widthExcel = 0.11f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(21, width256);
-        widthExcel = 6.00f;
+        widthExcel = 4.50f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(22, width256);
-        widthExcel = 1.00f;
+        widthExcel = 0.75f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(23, width256);
-        widthExcel = 3.30f;
+        widthExcel = 3.10f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(24, width256);
-        widthExcel = 3.00f;
+        widthExcel = 2.80f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(25, width256);
-        widthExcel = 4.20f;
+        widthExcel = 3.80f;
         width256 = (int)Math.floor((widthExcel * Units.DEFAULT_CHARACTER_WIDTH + 5) / Units.DEFAULT_CHARACTER_WIDTH * 256);
         sheet.setColumnWidth(26, width256);
         

@@ -155,7 +155,7 @@ public class upmarb extends javax.swing.JFrame {
         int i = Integer.parseInt(kk);
         func.db_con();
         String[] info = func.get_info(i);
-        String log_ant = func.login(i, info[2]);
+        String log_ant = func.login(i, info[3]);
         System.out.println(log_ant);
         if(log_ant.equals("Admin")){
             new admincontrol(kk).setVisible(true);
@@ -178,7 +178,7 @@ public class upmarb extends javax.swing.JFrame {
             int i = Integer.parseInt(kk);
             func.db_con();
             String[] info = func.get_info(i);
-            String log_ant = func.login(i, info[2]);
+            String log_ant = func.login(i, info[3]);
             System.out.println(log_ant);
             if(log_ant.equals("Admin")){
                 new admincontrol(kk).setVisible(true);
@@ -204,7 +204,7 @@ public class upmarb extends javax.swing.JFrame {
                 int i = Integer.parseInt(kk);
                 func.db_con();
                 String[] info = func.get_info(i);
-                String log_ant = func.login(i, info[2]);
+                String log_ant = func.login(i, info[3]);
                 System.out.println(log_ant);
                 if(log_ant.equals("Admin")){
                     new admincontrol(kk).setVisible(true);
